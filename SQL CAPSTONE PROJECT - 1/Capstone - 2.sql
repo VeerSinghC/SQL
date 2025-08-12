@@ -1,0 +1,34 @@
+CREATE TABLE IF NOT EXISTS NOMNOM (
+    NAME TEXT,
+    NEIGHBOURHOOD TEXT,
+    CUISINE TEXT,
+    REVIEW REAL,
+    PRICE TEXT,
+    HEALTH TEXT
+);
+
+INSERT INTO NOMNOM (NAME, NEIGHBOURHOOD, CUISINE, REVIEW, PRICE, HEALTH) VALUES
+('Pasta Palace', 'Downtown', 'Italian', 4.5, '$$', 'Healthy'),
+('Sushi Spot', 'Uptown', 'Japanese', 4.7, '$$$', 'Healthy'),
+('Burger Barn', 'Midtown', 'American', 4.0, '$', 'Unhealthy'),
+('Taco Town', 'Eastside', 'Mexican', 4.2, '$$', 'Healthy');
+
+SELECT * FROM NOMNOM;
+
+SELECT DISTINCT NEIGHBOURHOOD FROM NOMNOM;
+
+SELECT DISTINCT CUISINE FROM NOMNOM;
+
+SELECT * FROM NOMNOM WHERE CUISINE = 'Italian';
+
+SELECT * FROM NOMNOM WHERE REVIEW > 4.0;
+
+SELECT * FROM NOMNOM WHERE CUISINE = 'Japanese' AND PRICE = '$$$';
+
+SELECT * FROM NOMNOM WHERE NAME = 'Pasta Palace';
+
+SELECT * FROM NOMNOM
+WHERE NEIGHBOURHOOD IN ('Downtown', 'Uptown');
+
+SELECT * FROM NOMNOM ORDER BY REVIEW LIMIT 5;
+
